@@ -62,7 +62,8 @@ public class PostChecker {
                 if (jsonObject != null) {
                     for (JsonElement jsonElement : jsonObject.get("rss").getAsJsonObject().get("channel").getAsJsonObject().get("item").getAsJsonArray()) {
                         if (!postetThreads.contains(jsonElement.getAsJsonObject().get("guid").getAsString())) {
-                            String description = Jsoup.parse(jsonElement.getAsJsonObject().get("content:encoded").getAsString().replaceAll("(?i)<br[^>]*>", "br2nl").replaceAll("\n", "br2nl")).text().replaceAll("br2nl ", "").trim();
+                            String description = Jsoup.parse(jsonElement.getAsJsonObject().get("content:encoded").getAsString().replaceAll("(?i)<br[^>]*>", "br2nl").replaceAll("\n", "br2nl")).text().trim();
+                            description = description.replaceAll("br2nl", "");
                             if (description.length() >= 241) {
                                 description = description.substring(0, 240) + " ...";
                             }
