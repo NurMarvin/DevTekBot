@@ -1,0 +1,13 @@
+{
+  "token": "YOUR_TOKEN",
+  "twitter": false,
+  "twitterCredentials": {
+    "OAuthConsumerSecret": "",
+    "OAuthAccessTokenSecret": "",
+    "OAuthAccessToken": "",
+    "OAuthConsumerKey": ""
+  },
+  "postetThreads": [
+
+  ]
+}
