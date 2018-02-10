@@ -21,7 +21,6 @@ public class DevTekBot {
     private DevTekBot(){
         try {
             final Configuration configuration = new Gson().fromJson(new FileReader("config.json"), Configuration.class); ;
-            configuration.getTwitterCredentials().forEach((first, second) -> System.out.println(first + "#" + second));
             try {
                 new JDABuilder(AccountType.BOT)
                         .setToken(configuration.getToken())
