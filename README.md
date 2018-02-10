@@ -1,4 +1,4 @@
-# c0debaseBot [![star this repo](http://githubbadges.com/star.svg?user=Biospheere&repo=DevTekBot&style=default)](https://github.com/Biospheere/c0debaseBot) [![fork this repo](http://githubbadges.com/fork.svg?user=Biospheere&repo=DevTekBot&style=default)](https://github.com/Biospheere/DevTekBot/fork)
+# c0debaseBot [![star this repo](http://githubbadges.com/star.svg?user=Biospheere&repo=DevTekBot&style=default)](https://github.com/Biospheere/DevTekBot) [![fork this repo](http://githubbadges.com/fork.svg?user=Biospheere&repo=DevTekBot&style=default)](https://github.com/Biospheere/DevTekBot/fork)
 
 
 
