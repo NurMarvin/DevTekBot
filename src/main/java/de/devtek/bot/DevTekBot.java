@@ -21,7 +21,7 @@ public class DevTekBot {
 
     private DevTekBot(){
         try {
-            final Configuration configuration = new Gson().fromJson(new FileReader("config.json"), Configuration.class); ;
+            final Configuration configuration = new Gson().fromJson(new FileReader("config.json"), Configuration.class);
             try {
                 new JDABuilder(AccountType.BOT)
                         .setToken(configuration.getToken())
