@@ -3,6 +3,8 @@ package de.devtek.bot;
 import com.google.gson.*;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.Permission;
+import net.dv8tion.jda.core.utils.PermissionUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.json.XML;
@@ -81,7 +83,13 @@ public class PostChecker {
                             embedBuilder.setFooter("@" + jsonElement.getAsJsonObject().get("dc:creator").getAsString(), "https://dev-tek.de/images/apple-touch-icon.png");
                             embedBuilder.setTitle(jsonElement.getAsJsonObject().get("title").getAsString(), jsonElement.getAsJsonObject().get("link").getAsString());
                             embedBuilder.addField(description, "", false);
-                            jda.getGuilds().forEach(guild -> guild.getTextChannelsByName("dev-tek", true).get(0).sendMessage(embedBuilder.build()).queue());
+                            jda.getGuilds().forEach(guild -> {
+                                if(!guild.getTextChannelsByName("dev-tek", true).isEmpty()){
+                                    if(PermissionUtil.checkPermission( guild.getTextChannelsByName("dev-tek", true).get(0), guild.getSelfMember(), Permission.MESSAGE_WRITE)){
+                                        guild.getTextChannelsByName("dev-tek", true).get(0).sendMessage(embedBuilder.build()).queue();
+                                    }
+                                }
+                            });
 
                             if(configuration.isTwitter()){
                                 try {
