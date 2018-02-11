@@ -81,7 +81,7 @@ public class PostChecker {
                             embedBuilder.setFooter("@" + jsonElement.getAsJsonObject().get("dc:creator").getAsString(), "https://dev-tek.de/images/apple-touch-icon.png");
                             embedBuilder.setTitle(jsonElement.getAsJsonObject().get("title").getAsString(), jsonElement.getAsJsonObject().get("link").getAsString());
                             embedBuilder.addField(description, "", false);
-                            jda.getGuilds().get(0).getTextChannelsByName("dev-tek", true).get(0).sendMessage(embedBuilder.build()).queue();
+                            jda.getGuilds().forEach(guild -> guild.getTextChannelsByName("dev-tek", true).get(0).sendMessage(embedBuilder.build()).queue());
 
                             if(configuration.isTwitter()){
                                 try {
