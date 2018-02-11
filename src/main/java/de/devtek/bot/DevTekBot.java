@@ -5,6 +5,7 @@ import lombok.Getter;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.OnlineStatus;
+import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
@@ -26,6 +27,7 @@ public class DevTekBot {
                         .setToken(configuration.getToken())
                         .setEnableShutdownHook(true)
                         .setStatus(OnlineStatus.ONLINE)
+                        .setGame(Game.of(Game.GameType.DEFAULT, "mit dev-tek.de"))
                         .setAutoReconnect(true)
                         .setAudioEnabled(false)
                         .addEventListener(new ListenerAdapter() {
