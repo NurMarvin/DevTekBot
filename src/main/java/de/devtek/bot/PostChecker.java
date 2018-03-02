@@ -58,6 +58,7 @@ public class PostChecker {
                     connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
                     connection.connect();
                     jsonObject = new JsonParser().parse(XML.toJSONObject(IOUtils.toString(new InputStreamReader(connection.getInputStream(), Charset.forName("UTF-8")))).toString()).getAsJsonObject();
+                    connection.close();
                 } catch (IOException e) {
                     System.out.println("Could not parse latest posts " + e.getMessage());
                 }
